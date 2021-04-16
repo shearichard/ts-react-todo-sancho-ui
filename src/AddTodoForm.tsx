@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from "sancho";
 
 interface Props {
   addTodo: AddTodo;
@@ -16,7 +17,10 @@ export const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
             setText(e.target.value);
             }}
         />
-        <button
+        <Button
+            intent="primary"
+            size="sm"
+            variant="outline"
             type="submit"
             onClick={e => {
             e.preventDefault();
@@ -25,7 +29,7 @@ export const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
         }}
         >
             Add Todo
-        </button>
+        </Button>
     </form>
   );
 };
