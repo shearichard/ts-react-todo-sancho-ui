@@ -7,7 +7,7 @@ interface Props {
 
 export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
   return (
-    <li>
+    <span>
       <label
         style={{ textDecoration: todo.complete ? 'line-through' : undefined }}
       >
@@ -20,6 +20,6 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
         />{' '}
         {todo.text}
       </label>
-    </li>
+    </span>
   );
 };
