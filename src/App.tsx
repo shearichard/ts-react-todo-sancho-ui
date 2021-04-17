@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Global } from "@emotion/core";
 import { TodoList } from './TodoList';
 import { AddTodoForm } from './AddTodoForm';
 
@@ -36,8 +37,16 @@ function App() {
 
   return (
     <>
-      <TodoList todos={todos} toggleTodo={toggleTodo} />
-      <AddTodoForm addTodo={addTodo} />
+        <Global
+            styles={{
+                body: {
+                    margin: 0,
+                    padding: 0
+                }
+            }}
+        />
+        <TodoList todos={todos} toggleTodo={toggleTodo} />
+        <AddTodoForm addTodo={addTodo} />
     </>
   );
 }
