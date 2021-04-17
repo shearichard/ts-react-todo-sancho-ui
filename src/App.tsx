@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Global } from "@emotion/core";
 import { TodoList } from './TodoList';
 import { AddTodoForm } from './AddTodoForm';
+import { Helmet } from "react-helmet";
 
 const initialTodos: Todo[] = [
   {
@@ -45,6 +46,7 @@ function App() {
                 }
             }}
         />
+        <Helmet titleTemplate="%s | Todo with Sancho" defaultTitle="Todo with Sancho" />
         <TodoList todos={todos} toggleTodo={toggleTodo} />
         <AddTodoForm addTodo={addTodo} />
     </>
