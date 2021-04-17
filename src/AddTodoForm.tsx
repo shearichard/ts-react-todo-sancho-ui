@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import {useState } from 'react';
 import { Button } from "sancho";
 
 interface Props {
@@ -9,12 +10,12 @@ export const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
   const [text, setText] = useState('');
 
   return (
-    <form>
+    <form >
         <input
             type="text"
             value={text}
             onChange={e => {
-            setText(e.target.value);
+                setText(e.target.value);
             }}
         />
         <Button
@@ -23,12 +24,12 @@ export const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
             variant="outline"
             type="submit"
             onClick={e => {
-            e.preventDefault();
-            addTodo(text);
-            setText('');
+                e.preventDefault();
+                addTodo(text);
+                setText('');
         }}
         >
-            Add Todo
+            Add Todo (v1)
         </Button>
     </form>
   );
